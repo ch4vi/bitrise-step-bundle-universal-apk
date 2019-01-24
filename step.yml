@@ -51,11 +51,13 @@ run_if: ""
 
 deps:
   brew:
-  - name: git
+  - name: unzip
   - name: wget
+  - name: curl
   apt_get:
-  - name: git
+  - name: unzip
   - name: wget
+  - name: curl
 
 
 toolkit:
