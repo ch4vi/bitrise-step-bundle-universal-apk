@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+#set -ex
 
 #=======================================
 # Main
@@ -26,9 +26,15 @@ apk_output="${apk_output_path}/universal.apk"
 mkdir -p "${aab_output_path}" &
 mkdir -p "${apk_output_path}" &
 wait
-curl -o "keystore.jks" "${keystore_url}" &
-wget "${source}" --output-document="${bundletool}" &
+
+echo "Downloading keystore"
+curl -o "keystore.jks" "${keystore_url}" 
+
+echo "Downloading bundle tool"
+wget -nv "${source}" --output-document="${bundletool}" &
 wait
+
+echo "Extracting bundle apks"
 exec java -jar "${bundletool}" build-apks --bundle="${aab_path}" --output="${aab_output}" --mode=universal --ks=${keystore} --ks-pass=pass:"${keystore_password}" --ks-key-alias="${keystore_alias}" --key-pass=pass:"${keystore_alias_password}" &
 wait
 echo "APK created in ${apk_output_path}"
