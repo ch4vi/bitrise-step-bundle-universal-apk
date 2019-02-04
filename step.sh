@@ -33,8 +33,8 @@ exec java -jar "${bundletool}" build-apks --bundle="${aab_path}" --output="${aab
 wait
 echo "APK created in ${apk_output_path}"
 exec unzip ${aab_output} -d ${apk_output_path} &
+wait
 
 envman add --key BITRISE_APK_PATH --value ${apk_output}
 
-echo
 exit 0
