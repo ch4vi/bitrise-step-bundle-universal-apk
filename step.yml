@@ -75,6 +75,15 @@ inputs:
         Format examples:
         - `/path/to/my/app.aab`
       is_required: true
+  - apk_name: "$BITRISE_APK_RESULT_NAME"
+    opts:
+      title: "Universal apk name"
+      summary: "`Name of the resulting apk`"
+      description: |-
+        The name must end with .apk
+        Format examples:
+        - `apk_name.apk` or `apk_name`
+      is_required: false
   - keystore_url: $BITRISEIO_ANDROID_KEYSTORE_URL
     opts:
       title: "Keystore url"

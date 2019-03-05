@@ -46,6 +46,7 @@ workflows:
         run_if: true
         inputs:
         - aab_path: /Users/chavi/Documents/Repositories/ferring-ferringo-android-kotlin/app/build/outputs/bundle/ferringoDebug/app.aab
+        - apk_name: test_app.apk
         - keystore_url: $BITRISEIO_ANDROID_KEYSTORE_URL
         - keystore_password: $BITRISEIO_ANDROID_KEYSTORE_PASSWORD
         - keystore_alias: $BITRISEIO_ANDROID_KEYSTORE_ALIAS
