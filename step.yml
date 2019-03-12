@@ -118,7 +118,13 @@ inputs:
 outputs:
   - BITRISE_APK_PATH:
     opts:
-      title: "Path to the universal apk"
-      summary: This is the path to the universal apk signed with the passed keystore
+      title: "Universal apk path"
+      summary: Path to the universal apk signed with the given keystore
       description: |
-       You can upload this apk to alternative app stores or your test platform
+       You can upload this apk to an alternative app stores or your test platform
+  - BITRISE_APK_DIR:
+    opts:
+      title: "Apk direcotry"
+      summary: Path to directory where all the apk's are stored after the step.
+      description: |
+       You can upload this directory to an alternative app stores or your test platform

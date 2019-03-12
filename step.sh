@@ -58,5 +58,6 @@ mv ${apk_output_path}/universal.apk ${apk_output} &
 wait
 
 envman add --key BITRISE_APK_PATH --value ${apk_output}
+envman add --key BITRISE_APK_DIR --value ${apk_output_path}
 
 exit 0

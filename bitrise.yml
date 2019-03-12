@@ -51,6 +51,21 @@ workflows:
         - keystore_password: $BITRISEIO_ANDROID_KEYSTORE_PASSWORD
         - keystore_alias: $BITRISEIO_ANDROID_KEYSTORE_ALIAS
         - keystore_alias_password: $BITRISEIO_ANDROID_KEYSTORE_ALIAS_PASSWORD
+    - path::./:
+        title: Step Test 2
+        description: |-
+          The example input has a default value,
+          you can overwrite it if you want to, just like we did below,
+          but the step would use the default value specified in the `step.yml`
+          file if you would not specify another value.
+        run_if: true
+        inputs:
+        - aab_path: /Users/chavi/Documents/Repositories/ferring-ferringo-android-kotlin/app/build/outputs/bundle/ferringoDebug/app.aab
+        - apk_name: test_app2.apk
+        - keystore_url: $BITRISEIO_ANDROID_KEYSTORE_URL
+        - keystore_password: $BITRISEIO_ANDROID_KEYSTORE_PASSWORD
+        - keystore_alias: $BITRISEIO_ANDROID_KEYSTORE_ALIAS
+        - keystore_alias_password: $BITRISEIO_ANDROID_KEYSTORE_ALIAS_PASSWORD
     - script:
         inputs:
         - content: |
