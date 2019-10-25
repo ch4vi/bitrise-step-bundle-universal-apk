@@ -45,8 +45,9 @@ workflows:
           file if you would not specify another value.
         run_if: true
         inputs:
-        - aab_path: /Users/chavi/Documents/Repositories/ferring-ferringo-android-kotlin/app/build/outputs/bundle/ferringoDebug/app.aab
+        - aab_path: /Users/jray/Documents/OwnRepos/BudgetApp/app/release/app-release.aab
         - apk_name: test_app.apk
+        - apk_output_dir: /Users/jray/Desktop/here
         - keystore_url: $BITRISEIO_ANDROID_KEYSTORE_URL
         - keystore_password: $BITRISEIO_ANDROID_KEYSTORE_PASSWORD
         - keystore_alias: $BITRISEIO_ANDROID_KEYSTORE_ALIAS
@@ -60,8 +61,9 @@ workflows:
           file if you would not specify another value.
         run_if: true
         inputs:
-        - aab_path: /Users/chavi/Documents/Repositories/ferring-ferringo-android-kotlin/app/build/outputs/bundle/ferringoDebug/app.aab
+        - aab_path: /Users/jray/Documents/OwnRepos/BudgetApp/app/release/app-release.aab
         - apk_name: test_app2.apk
+        - apk_output_dir: /Users/jray/Desktop/here
         - keystore_url: $BITRISEIO_ANDROID_KEYSTORE_URL
         - keystore_password: $BITRISEIO_ANDROID_KEYSTORE_PASSWORD
         - keystore_alias: $BITRISEIO_ANDROID_KEYSTORE_ALIAS

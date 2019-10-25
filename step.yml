@@ -75,7 +75,7 @@ inputs:
         Format examples:
         - `/path/to/my/app.aab`
       is_required: true
-  - apk_name: "$BITRISE_APK_RESULT_NAME"
+  - apk_name: "$BITRISE_APK_OUTPUT_NAME"
     opts:
       title: "Universal apk name"
       summary: "`Name of the resulting apk`"
@@ -83,6 +83,15 @@ inputs:
         The name must end with .apk
         Format examples:
         - `apk_name.apk` or `apk_name`
+      is_required: false
+  - apk_output_dir: "$BITRISE_APK_OUTPUT_DIR"
+    opts:
+      title: "APK's output directory"
+      summary: "`Path where the apk's will be moved after`"
+      description: |-
+        If no Apk otuput dir is provided, the apk's will be at $BITRISE_APK_DIR
+        Format examples:
+        - `$BITRISE_DEPLOY_DIR`
       is_required: false
   - keystore_url: $BITRISEIO_ANDROID_KEYSTORE_URL
     opts:

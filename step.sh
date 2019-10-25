@@ -26,7 +26,8 @@ validateApkName
 echo "apk name ${apk_name}"
 
 bundletool="${temp_path}/bundletool.jar"
-keystore="${temp_path}/keystore.jks"
+# keystore="${temp_path}/keystore.jks"
+keystore="/Users/jray/Documents/OwnRepos/BudgetApp/bitrise.jks"
 source="https://github.com/google/bundletool/releases/download/0.8.0/bundletool-all-0.8.0.jar"
 
 # Building
@@ -41,6 +42,7 @@ wait
 
 echo "Downloading keystore"
 curl -o "keystore.jks" "${keystore_url}" 
+wait
 
 echo "Downloading bundle tool"
 wget -nv "${source}" --output-document="${bundletool}" &
@@ -55,6 +57,14 @@ wait
 
 # rename universal.apk to the given name
 mv ${apk_output_path}/universal.apk ${apk_output} &
+wait
+
+# move the apk to the alternative output path
+if [[ -n "${apk_output_dir// }" ]]; then
+        mv ${apk_output} ${apk_output_dir}/${apk_name}.apk &
+        apk_output="${apk_output_dir}/${apk_name}.apk"
+        apk_output_path="${apk_output_dir}"
+fi
 wait
 
 envman add --key BITRISE_APK_PATH --value ${apk_output}
