@@ -26,8 +26,7 @@ validateApkName
 echo "apk name ${apk_name}"
 
 bundletool="${temp_path}/bundletool.jar"
-# keystore="${temp_path}/keystore.jks"
-keystore="/Users/jray/Documents/OwnRepos/BudgetApp/bitrise.jks"
+keystore="${temp_path}/keystore.jks"
 source="https://github.com/google/bundletool/releases/download/0.8.0/bundletool-all-0.8.0.jar"
 
 # Building
